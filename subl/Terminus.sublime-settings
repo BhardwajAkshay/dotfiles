@@ -1,0 +1,44 @@
+{
+	"shell_configs": [
+        {
+            "name": "Bash",
+            "cmd": ["bash", "-i", "-l"],
+            "env": {},
+            "enable": true,
+            "default": true,
+            "platforms": ["linux", "osx"]
+        }
+    ],
+    "256color": true,
+    "unix_term": "xterm-256color",
+    "preserve_keys" : [
+        "ctrl+k",   // there are a number of shortcuts with "ctrl+k" prefix.
+        "ctrl+p"    // to show Go to Anything
+    ],
+    "theme": "user",
+    "user_theme_colors": {
+    	"background": "#343d47",
+        "foreground": "#e8ffff",
+        "caret": "#5856d6",
+        "block_caret": "#5856d6",
+        "selection": "#8cd3ff",
+        "selection_foreground": "#d9f1ff",
+        "00": "#000000",  // black
+        "01": "#ff3b30",  // red
+        "02": "#4cd964",  // green
+        "03": "#cdcd00",  // brown
+        "04": "#007aff",  // blue
+        "05": "#cd00cd",  // magenta
+        "06": "#00cdcd",  // cyan
+        "07": "#e5e5e5",  // white
+        "08": "#7f7f7f",  // light_black
+        "09": "#ff0000",  // light_red
+        "10": "#00ff00",  // light_green
+        "11": "#ffff00",  // light_brown
+        "12": "#5c5cff",  // light_blue
+        "13": "#ff00ff",  // light_magenta
+        "14": "#00ffff",  // light_cyan
+        "15": "#ffffff",  // light_white
+    }
+}
+

@@ -1,0 +1,42 @@
+[
+	//open terminus -new tab
+	{ "keys": ["ctrl+'"], "command": "terminus_open",
+	  "args":{
+	  	"config_name": "Default",
+	  	//open in desktop
+	  	"cwd": "/Users/user_name/Desktop"
+	  }
+	},
+
+	//open terminus -new panel
+	{ "keys": ["ctrl+/"], "command": "terminus_open",
+	  "args": { "panel_name": "Terminus" }
+	},
+
+	//terminus -copy
+	{ "keys": ["super+c"], "command": "terminus_copy", "context": [{"key": "terminus_view"}] },
+
+    //terminus -paste
+    { "keys": ["super+v"], "command": "terminus_paste", "context": [{"key": "terminus_view"}] },
+
+    //terminus -move to left&right
+    { "keys": ["super+left"], "command": "terminus_keypress", "args": {"key": "a", "ctrl": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["super+right"], "command": "terminus_keypress", "args": {"key": "e", "ctrl": true}, "context": [{"key": "terminus_view"}] },
+
+	//terminus -cancel build
+	{ "keys": ["ctrl+c"], "command": "cancel_build",
+      "context": [
+        {"key": "terminus_view.cancellable", "operator": "equal", "operand": true}
+      ]
+    },
+
+    //custom save - overriding the default save command.
+    {"keys": ["super+s"], "command": "custom_save"}
+
+	//close panel
+
+	//maximize panel
+
+]
+
+

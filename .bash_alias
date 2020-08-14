@@ -1,0 +1,51 @@
+#---------------------------------------------------------------------------------------#
+..() {
+    if [ "$1" = "" ];
+    then
+            cd ..;
+        return;
+    fi
+    NUM_TIMES=$( echo $(($1 - 1)) );
+    for ((x=0;$x<=$NUM_TIMES; x++))
+    do
+        cd ..;
+    done;
+}
+
+tab() {
+  osascript 2>/dev/null <<EOF
+    tell application "System Events"
+      tell process "Terminal" to keystroke "t" using command down
+    end
+    tell application "Terminal"
+    activate
+    	set shell to do script "cd /Users/user_name/Desktop" in window 1
+    	# do script "$1" in shell # commands to be executed
+	end tell
+EOF
+}
+
+# _() {
+#   osascript 2>/dev/null <<EOF
+#     tell application "System Events"
+#       tell process "Terminal" to keystroke "c" using control down
+#     end tell
+# EOF
+# }
+
+#---------------------------------------------------------------------------------------#
+alias ~='cd ~'
+alias root='cd /'
+alias c='clear'
+alias q='exit'
+alias la='ls -lA -G'
+alias ls='ls -G'
+alias path='echo -e ${PATH//:/\\n} | less'
+alias ip='curl http://ipecho.net/plain; echo'
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+#---------------------#
+alias pip='pip3'
+alias py='python3'
+#---------------------#
+alias su='sudo -i'
