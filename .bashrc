@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo '🅤 🅢 🅔 🅡'
+# echo '🅤 🅢 🅔 🅡'
 
 . ~/.bash_prompt
 . ~/.bash_alias
