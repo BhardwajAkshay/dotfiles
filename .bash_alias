@@ -5,8 +5,7 @@
             cd ..;
         return;
     fi
-    NUM_TIMES=$( echo $(($1 - 1)) );
-    for ((x=0;$x<=$NUM_TIMES; x++))
+    for ((x=0; $x<=$1; x++))
     do
         cd ..;
     done;
@@ -25,14 +24,6 @@ tab() {
 EOF
 }
 
-# _() {
-#   osascript 2>/dev/null <<EOF
-#     tell application "System Events"
-#       tell process "Terminal" to keystroke "c" using control down
-#     end tell
-# EOF
-# }
-
 #---------------------------------------------------------------------------------------#
 alias ~='cd ~'
 alias root='cd /'
@@ -42,8 +33,8 @@ alias la='ls -lA -G'
 alias ls='ls -G'
 alias path='echo -e ${PATH//:/\\n} | less'
 alias ip='curl http://ipecho.net/plain; echo'
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showDesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 #---------------------#
 alias pip='pip3'
 alias py='python3'
