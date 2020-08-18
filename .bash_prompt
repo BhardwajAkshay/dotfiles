@@ -4,7 +4,7 @@ orange=$(tput setaf 202);
 yellow=$(tput setaf 214);
 blue=$(tput setaf 33);
 white=$(tput setaf 15);
-dullWhite=$(tput setaf 253);
+grey=$(tput setaf 255);
 red=$(tput setaf 196);
 green=$(tput setaf 118);
 violet=$(tput setaf 129);
@@ -13,15 +13,15 @@ reset=$(tput sgr0);
 
 #------------------------------------------- Prompt --------------------------------------------#
 PS1='\n';
-PS1+="\$(if [[ \$? -gt 0 ]]; then printf \"\\[${red}\\]●\"; else printf \"\\[${green}\\]●\"; fi)"
+PS1+="\$(if [[ \$? -gt 0 ]]; then printf \"\\[${red}\\]✖\"; else printf \"\\[${grey}\\]●\"; fi)"
 PS1+='\[$yellow\] \u';	# Username
 PS1+='\[${white}\] in';
 PS1+='\[${blue}\] \W';	# Directoty
 PS1+='\n';
-PS1+='\[${dullWhite}\]╰❱ ';
+PS1+='\[${grey}\]╰❱ ';
 PS1+='\[${reset}\]';
 export PS1;
 
-PS2="\[${dullWhite}\] ❱ \[${reset}\]";
+PS2="\[${grey}\] ❱ \[${reset}\]";
 export PS2;
 #------------------------------------------- Prompt --------------------------------------------#
