@@ -1,36 +1,29 @@
-#---------------------------------------------------------------------------------------#
-..() {
-    if [ "$1" = "" ];
-    then
-            cd ..;
-        return;
-    fi
-    for ((x=0; $x<=$1; x++))
-    do
-        cd ..;
-    done;
-}
+DESKTOP='/Users/user_name/Desktop'
+
 
 tab() {
-  osascript 2>/dev/null <<EOF
+
+    # if[ '$2' == '' ];then
+    #     dir=$(pwd);
+    # else
+    #     dir=$2
+    # fi
+
+    osascript 2>/dev/null <<EOF
     tell application "System Events"
       tell process "Terminal" to keystroke "t" using command down
     end
     tell application "Terminal"
     activate
-    	set shell to do script "cd /Users/user_name/Desktop" in window 1
-    	# do script "$1" in shell # commands to be executed
-	end tell
+        # set shell to do script "cd $DESKTOP" in window 1
+        do script with command "$1" in window 1 # commands to be executed
+    end tell
 EOF
 }
 
 #---------------------------------------------------------------------------------------#
-alias ~='cd ~'
-alias root='cd /'
 alias c='clear'
 alias q='exit'
-alias la='ls -lA -G'
-alias ls='ls -G'
 alias path='echo -e ${PATH//:/\\n} | less'
 alias ip='curl http://ipecho.net/plain; echo'
 alias hideDesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
