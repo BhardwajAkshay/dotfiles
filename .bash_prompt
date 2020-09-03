@@ -2,7 +2,7 @@
 
 export TERM="xterm-256color"
 
-# Variables
+# colors
 orange=$(tput setaf 202);
 yellow=$(tput setaf 214);
 blue=$(tput setaf 33);
