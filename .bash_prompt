@@ -55,13 +55,13 @@ prompt_git() {
     # check remote
     local git_status="$(git remote update && git status -uno 2> /dev/null)"
     if [[ ${git_status} == *"Your branch is ahead"* ]]; then
-            remote="↑"
+            remote="↑" # push
         elif [[ ${git_status} == *"Your branch is behind"* ]]; then
-            remote="↓"
+            remote="↓" # pull
         elif [[ ${git_status} == *"Your branch has diverged"* ]]; then
             remote="↕"
-        else #up-to-date
-            remote="-"
+        else 
+            remote="-" # up-to-date
     fi;
 
     echo -e "${1}${branchName} ${3}[${2}${status}${3}]${3}[${2}${remote}${3}]";
