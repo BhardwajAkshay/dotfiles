@@ -1,0 +1,14 @@
+{
+    “cmd”: [“#PATH”, “-u”, “$file”],
+    “file_regex”: “^[ ]*File \”(…*?)\”, line ([0–9]*)”,
+    “selector”: “source.python”
+}
+
+/* PATH
+$ which python3
+*/
+
+/* TEST.py
+import sys
+print (sys.version)
+*/

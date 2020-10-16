@@ -1,0 +1,20 @@
+$ cd /Applications/Sublime\ Text.app/Contents/MacOS/Packages/
+$ mkdir temp
+$ mv Java.sublime-package java/
+$ cd java
+$ unzip Java.sublime-package
+$ subl JavaC.sublime-build
+
+/*Replace code
+{
+    "cmd": ["javac \"$file_name\" && java \"$file_base_name\""],
+    "shell": true,
+    "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+    "selector": "source.java"
+}
+*/
+
+$ zip Java.sublime-package *
+$ mv Java.sublime-package ../
+$ cd ..
+$ rm -fr java/
